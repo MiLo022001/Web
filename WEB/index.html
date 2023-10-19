@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hiệu ứng Pháo Hoa và Trái Tim</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #fireworks-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #heart {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 100px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="fireworks-container"></div>
+    <div id="heart">❤️</div>
+
+    <script>
+        // Create and append fireworks to the container
+        function createFirework() {
+            const fireworks = document.getElementById("fireworks-container");
+            const firework = document.createElement("div");
+            firework.className = "firework";
+            fireworks.appendChild(firework);
+
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+            firework.style.left = x + "px";
+            firework.style.top = y + "px";
+
+            setTimeout(() => {
+                fireworks.removeChild(firework);
+            }, 2000);
+        }
+
+        // Generate fireworks at random intervals
+        function generateFireworks() {
+            createFirework();
+            setTimeout(generateFireworks, 1000 + Math.random() * 2000);
+        }
+
+        // Start generating fireworks
+        generateFireworks();
+    </script>
+</body>
+</html>
