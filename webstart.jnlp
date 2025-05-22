@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jnlp spec="1.0+" codebase="http://172.16.54.17:4711/Konfigurator/" href="webstart.jnlp">
+<jnlp spec="1.0+" codebase="http://10.99.253.85:4711/Konfigurator/" href="webstart.jnlp">
 	<information>
 		<title>Skyhigh Secure Web Gateway</title>
 		<vendor>Skyhigh Security</vendor>
